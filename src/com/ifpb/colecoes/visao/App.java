@@ -17,7 +17,28 @@ public class App {
 //        System.out.println(ehBalanceada("(B+C+(A+B)"));
 
 //        operacoesConjuntos();
-        operacoesConjuntosOrdenados();
+//        operacoesConjuntosOrdenados();
+
+        operacoesFilas();
+
+    }
+
+    private static void operacoesFilas() {
+
+        Queue<Pessoa> pessoas = new LinkedList<>();
+
+        pessoas.offer(new Pessoa("333.3333.333-03", "João", LocalDate.now()));
+        pessoas.offer(new Pessoa("222.222.222-02", "Ana", LocalDate.now()));
+        pessoas.offer(new Pessoa("111.111.111-01", "Pedro", LocalDate.now()));
+
+        //Não remove o elemento
+        System.out.println("Cabeça: "+pessoas.peek());
+
+        System.out.println("Quantidade de elementos: "+pessoas.size());
+
+        while (!pessoas.isEmpty()){
+            System.out.println(pessoas.poll());
+        }
 
     }
 
