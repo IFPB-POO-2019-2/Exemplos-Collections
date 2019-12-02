@@ -10,8 +10,28 @@ public class App {
     public static void main(String[] args) {
 
 //        operacoesListas();
-        operacoesPilhas();
+//        operacoesPilhas();
 
+        System.out.println(ehBalanceada("(X+Y*(A+B)+C)"));
+        System.out.println(ehBalanceada("(A+B+C))"));
+        System.out.println(ehBalanceada("(B+C+(A+B)"));
+
+
+    }
+
+    public static boolean ehBalanceada(String equacao){
+        Stack<String> pilha = new Stack<>();
+
+        for(int i=0; i<equacao.length();i++){
+            if(equacao.charAt(i) == '('){
+                //Pode ser qualquer coisa...
+                pilha.push("AAA");
+            }else if(equacao.charAt(i) == ')'){
+                if(pilha.isEmpty()) return false;
+                pilha.pop();
+            }
+        }
+        return pilha.isEmpty();
     }
 
     private static void operacoesPilhas() {
@@ -45,7 +65,7 @@ public class App {
     }
 
     private static void operacoesListas() {
-        List<Pessoa> pessoas = new Vector<>();
+        List<Pessoa> pessoas = new ArrayList<>();
 
         //CREATE
         pessoas.add(new Pessoa("111.111.111-01", "João",
