@@ -15,6 +15,10 @@ public class Pessoa {
         this.nascimento = nascimento;
     }
 
+    public Pessoa(String cpf){
+        this.cpf = cpf;
+    }
+
     public String getCpf() {
         return cpf;
     }
