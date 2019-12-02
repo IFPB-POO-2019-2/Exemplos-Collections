@@ -12,10 +12,37 @@ public class App {
 //        operacoesListas();
 //        operacoesPilhas();
 
-        System.out.println(ehBalanceada("(X+Y*(A+B)+C)"));
-        System.out.println(ehBalanceada("(A+B+C))"));
-        System.out.println(ehBalanceada("(B+C+(A+B)"));
+//        System.out.println(ehBalanceada("(X+Y*(A+B)+C)"));
+//        System.out.println(ehBalanceada("(A+B+C))"));
+//        System.out.println(ehBalanceada("(B+C+(A+B)"));
 
+        operacoesConjuntos();
+
+    }
+
+    private static void operacoesConjuntos() {
+        Set<Pessoa> pessoas = new HashSet<>();
+
+        //Adicionar
+        pessoas.add(new Pessoa("111.111.111-01", "João",
+                LocalDate.now()));
+        pessoas.add(new Pessoa("222.222.222-02", "Maria",
+                LocalDate.now()));
+        if(pessoas.add(new Pessoa("111.111.111-01", "Pedro",
+                LocalDate.now()))){
+            System.out.println("Inserido");
+        }else{
+            System.out.println("Não inserido");
+        }
+
+        //Verificar se está presente
+        System.out.println(pessoas.contains(new Pessoa("111.111.111-01",
+                "João", LocalDate.now())));
+
+        //Remover
+        pessoas.remove(new Pessoa("111.111.111-01", "aaa", LocalDate.now()));
+
+        System.out.println(pessoas);
 
     }
 
