@@ -16,7 +16,24 @@ public class App {
 //        System.out.println(ehBalanceada("(A+B+C))"));
 //        System.out.println(ehBalanceada("(B+C+(A+B)"));
 
-        operacoesConjuntos();
+//        operacoesConjuntos();
+        operacoesConjuntosOrdenados();
+
+    }
+
+    private static void operacoesConjuntosOrdenados() {
+
+        //Serão ordenados pelo Comparable em ordem crescente.
+        Set<Pessoa> pessoas = new TreeSet<>();
+
+        pessoas.add(new Pessoa("222.222.222-02", "João",
+                LocalDate.now()));
+        pessoas.add(new Pessoa("111.111.111-01", "Maria",
+                LocalDate.now()));
+        pessoas.add(new Pessoa("111.111.111-01", "Ana",
+                LocalDate.now()));
+
+        System.out.println(pessoas);
 
     }
 
@@ -28,7 +45,7 @@ public class App {
                 LocalDate.now()));
         pessoas.add(new Pessoa("222.222.222-02", "Maria",
                 LocalDate.now()));
-        if(pessoas.add(new Pessoa("111.111.111-01", "Pedro",
+        if(pessoas.add(new Pessoa("111.111.111-01", "Ana",
                 LocalDate.now()))){
             System.out.println("Inserido");
         }else{
